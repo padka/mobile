@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Основные цвета -->
+    <color name="pokemonPrimary">#FFCB05</color> <!-- Желтый (например, как у Pikachu) -->
+    <color name="pokemonSecondary">#3B4CCA</color> <!-- Синий (например, как у Squirtle) -->
+    <color name="pokemonAccent">#FF0000</color> <!-- Красный (например, как у Charizard) -->
+
+    <!-- Цвета текста -->
+    <color name="pokemonTextPrimary">#FF000000</color> <!-- Черный -->
+    <color name="pokemonTextSecondary">#FFFFFFFF</color> <!-- Белый -->
+
+    <!-- Цвета фона -->
+    <color name="pokemonBackground">#F0F0F0</color> <!-- Светло-серый фон -->
+    <color name="pokemonCardBackground">#FFFFFF</color> <!-- Белый для карточек и виджетов -->
+
+    <!-- Цвета разделителей -->
+    <color name="dividerColor">#DDDDDD</color> <!-- Светло-серый для разделителей -->
+
+    <!-- Цвет тени -->
+    <color name="pokemonShadowColor">#44000000</color> <!-- Черный с прозрачностью для теней -->
+
+    <!-- Цвета кнопок -->
+    <color name="pokemonButtonColor">#3B4CCA</color> <!-- Синий для кнопок -->
+    <color name="pokemonButtonTextColor">#FFFFFFFF</color> <!-- Белый для текста на кнопках -->
+
+    <!-- Дополнительные пастельные цвета для мягких акцентов -->
+    <color name="pastelBlue">#A7D8F0</color> <!-- Пастельный голубой -->
+    <color name="pastelYellow">#F8E9A1</color> <!-- Светло-желтый -->
+    <color name="pastelGreen">#98D3A8</color> <!-- Пастельно-зеленый -->
+    <color name="pastelPink">#FAD1D3</color> <!-- Пастельно-розовый -->
+
 </resources>

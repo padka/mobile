@@ -1,7 +1,30 @@
 <resources>
+    <!-- Название приложения -->
     <string name="app_name">Pokedex</string>
-     <string name="types_format">Types: %1$s</string>
+
+    <!-- Форматирование типов покемонов -->
+    <string name="types_format">Types: %1$s</string>
+
+    <!-- Форматирование способностей покемонов -->
     <string name="abilities_format">Abilities: %1$s</string>
+
+    <!-- Текст для поиска -->
     <string name="search">Search</string>
 
+    <!-- Ссылки на шрифты -->
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:fontProviderAuthority="com.google.android.gms.fonts"
+        android:fontProviderPackage="com.google.android.gms"
+        android:fontProviderQuery="name=Roboto"
+        android:fontProviderCerts="@array/com_google_android_gms_fonts_certs"
+        android:font="@font/roboto_regular" />
+
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:fontProviderAuthority="com.google.android.gms.fonts"
+        android:fontProviderPackage="com.google.android.gms"
+        android:fontProviderQuery="name=PokemonFont"
+        android:fontProviderCerts="@array/com_google_android_gms_fonts_certs"
+        android:font="@font/pokemon_font" />
 </resources>

@@ -1,10 +1,8 @@
 package com.example.pokedex.repositories
 
-import com.example.pokedex.services.PokeApiService
 import com.example.pokedex.models.PokemonDetail
 import com.example.pokedex.models.PokemonResponse
-import retrofit2.Call
-import retrofit2.Callback
+import com.example.pokedex.services.PokeApiService
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -18,37 +16,12 @@ object PokemonRepository {
             .create(PokeApiService::class.java)
     }
 
-
-    fun getPokemonList(
-        limit: Int = 20,
-        offset: Int = 0,
-        callback: (Response<PokemonResponse>) -> Unit
-    ) {
-        pokeApiService.listPokemons(limit, offset).enqueue(object : Callback<PokemonResponse> {
-            override fun onResponse(
-                call: Call<PokemonResponse>,
-                response: Response<PokemonResponse>
-            ) {
-                callback(response)
-            }
-
-            override fun onFailure(call: Call<PokemonResponse>, t: Throwable) {
-
-            }
-        })
+    // Используем suspend функции для асинхронного выполнения запросов
+    suspend fun getPokemonList(limit: Int = 20, offset: Int = 0): Response<PokemonResponse> {
+        return pokeApiService.listPokemons(limit, offset)
     }
 
-    fun getPokemonDetail(id: String, callback: (Response<PokemonDetail>) -> Unit) {
-        pokeApiService.getPokemonDetail(id).enqueue(object : Callback<PokemonDetail> {
-            override fun onResponse(call: Call<PokemonDetail>, response: Response<PokemonDetail>) {
-                callback(response)
-            }
-
-            override fun onFailure(call: Call<PokemonDetail>, t: Throwable) {
-
-            }
-        })
+    suspend fun getPokemonDetail(id: String): Response<PokemonDetail> {
+        return pokeApiService.getPokemonDetail(id)
     }
-
-
 }

@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/pokemonBackground">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,6 +15,9 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:src="@drawable/pokemon_placeholder"
+            android:background="@drawable/pokemon_background"
+            android:padding="8dp"
+            android:elevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -23,8 +27,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Pokemon Name"
-            android:textSize="24sp"
+            android:textSize="26sp"
             android:textStyle="bold"
+            android:textColor="@color/pokemonPrimary"
+            android:gravity="center"
+            android:shadowColor="@color/pokemonShadowColor"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pokemonImageView" />
@@ -33,7 +43,7 @@
             android:id="@+id/divider1"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="?android:attr/listDivider"
+            android:background="@color/dividerColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pokemonNameTextView" />
@@ -44,6 +54,8 @@
             android:layout_height="wrap_content"
             android:text="Type"
             android:textSize="18sp"
+            android:textColor="@color/pokemonAccent"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider1" />
@@ -52,7 +64,7 @@
             android:id="@+id/divider2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="?android:attr/listDivider"
+            android:background="@color/dividerColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pokemonTypeTextView" />
@@ -63,6 +75,8 @@
             android:layout_height="wrap_content"
             android:text="Abilities"
             android:textSize="18sp"
+            android:textColor="@color/pokemonTextPrimary"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider2" />
@@ -71,7 +85,7 @@
             android:id="@+id/divider3"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="?android:attr/listDivider"
+            android:background="@color/dividerColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pokemonAbilitiesTextView" />
@@ -82,6 +96,8 @@
             android:layout_height="wrap_content"
             android:text="Moves"
             android:textSize="18sp"
+            android:textColor="@color/pokemonTextPrimary"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider3" />
@@ -90,7 +106,7 @@
             android:id="@+id/divider4"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="?android:attr/listDivider"
+            android:background="@color/dividerColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pokemonMovesTextView" />
@@ -101,14 +117,17 @@
             android:layout_height="wrap_content"
             android:text="Stats"
             android:textSize="18sp"
+            android:textColor="@color/pokemonTextPrimary"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pokemonMovesTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/divider4" />
 
         <View
             android:id="@+id/divider5"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="?android:attr/listDivider"
+            android:background="@color/dividerColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pokemonStatsTextView" />
@@ -119,14 +138,17 @@
             android:layout_height="wrap_content"
             android:text="Height"
             android:textSize="18sp"
+            android:textColor="@color/pokemonTextPrimary"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pokemonStatsTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/divider5" />
 
         <View
             android:id="@+id/divider6"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="?android:attr/listDivider"
+            android:background="@color/dividerColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pokemonHeightTextView" />
@@ -137,6 +159,9 @@
             android:layout_height="wrap_content"
             android:text="Weight"
             android:textSize="18sp"
+            android:textColor="@color/pokemonTextPrimary"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pokemonHeightTextView" />
 

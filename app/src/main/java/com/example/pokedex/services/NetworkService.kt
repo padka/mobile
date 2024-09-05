@@ -6,7 +6,7 @@ import com.example.pokedex.models.PokemonMovesDetail
 import com.example.pokedex.models.PokemonResponse
 import com.example.pokedex.models.PokemonStatsDetail
 import com.example.pokedex.models.PokemonTypeDetail
-import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -14,41 +14,38 @@ import retrofit2.http.Query
 interface PokeApiService {
 
     @GET("pokemon")
-    fun listPokemons(
+    suspend fun listPokemons(
         @Query("limit") limit: Int,
         @Query("offset") offset: Int
-    ): Call<PokemonResponse>
+    ): Response<PokemonResponse>
 
     @GET("pokemon/{nameOrId}")
-    fun getPokemonDetail(
+    suspend fun getPokemonDetail(
         @Path("nameOrId") nameOrId: String
-    ): Call<PokemonDetail>
+    ): Response<PokemonDetail>
 
     @GET("type/{type}")
-    fun getPokemonTypeDetail(
+    suspend fun getPokemonTypeDetail(
         @Path("type") type: String
-    ): Call<PokemonTypeDetail>
+    ): Response<PokemonTypeDetail>
 
     @GET("ability/{ability}")
-    fun getPokemonAbilityDetail(
+    suspend fun getPokemonAbilityDetail(
         @Path("ability") ability: String
-    ): Call<PokemonAbilityDetail>
+    ): Response<PokemonAbilityDetail>
 
     @GET("pokemon/{nameOrId}")
-    fun getPokemonStatsDetail(
+    suspend fun getPokemonStatsDetail(
         @Path("nameOrId") nameOrId: String
-    ): Call<PokemonStatsDetail>
+    ): Response<PokemonStatsDetail>
 
     @GET("pokemon/{nameOrId}")
-    fun getPokemonMovesDetail(
+    suspend fun getPokemonMovesDetail(
         @Path("nameOrId") nameOrId: String
-    ): Call<PokemonMovesDetail>
+    ): Response<PokemonMovesDetail>
 
     @GET("pokemon/{nameOrId}")
-    fun getPokemonHeightAndWeight(
+    suspend fun getPokemonHeightAndWeight(
         @Path("nameOrId") nameOrId: String
-    ): Call<PokemonDetail>
-
+    ): Response<PokemonDetail>
 }
-
-
